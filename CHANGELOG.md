@@ -5,6 +5,17 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.28.2] - 2026-10-21
+
+### Added
+
+- Prompt templates: the Why card of a suggestion lists the titles of the chats it came from.
+
+### Fixed
+
+- Prompt templates and shared skills can't be saved or shared under names Windows reserves (`con`, `nul`, `com1` and the like), which would break the folder for teammates on Windows.
+- Installing or updating a plugin stops with a clear error when `known_marketplaces.json` is not a JSON object, instead of adding a marketplace that is already registered.
+
 ## [0.28.1] - 2026-10-20
 
 This is the first public release since 0.26.0. Versions 0.27.0 and 0.28.0 were built but never reached the public `kode` repository, so their changes arrive here; their notes are below.
