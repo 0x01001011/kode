@@ -5,6 +5,21 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.31.0] - 2026-10-21
+
+### Added
+
+- The Run tab shows the Superpowers stages a chat went through (Brainstorm, Plan, Build, TDD, Verify, Review, Finish), with the latest marked while the run is on. A stage the chat never used is not shown, and the trail appears once two stages have run.
+
+### Changed
+
+- The run panel follows Superpowers only. A chat gets the layer after it loads a Superpowers SDD skill, owns a Superpowers progress file, or loads the test-driven-development skill and runs a test. Plan files from other tools no longer start one.
+- The Run tab is quieter: no "Open plan" button beside the Plan tab, one line of text per gate instead of a state word plus detail, and a test-first card without a second TDD row or an empty "Left" row.
+
+### Removed
+
+- OpenSpec and Spec Kit runs and plans in the run layers (added in 0.30.0).
+
 ## [0.30.0] - 2026-10-21
 
 ### Added
