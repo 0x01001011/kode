@@ -5,6 +5,19 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.29.0] - 2026-10-21
+
+### Added
+
+- Prompt templates: placeholders. Write `{{name}}` or `{{name: hint}}` in a template. When the template is on in a chat, the Templates pill shows a field for each one ("Templates · 1 · 1 to fill"). A message with an empty field is not sent; it stays in the composer and the pill opens on that field. Enter moves to the next empty field and, on the last one, returns to the message. Values are saved per chat. "+ placeholder" in the editor inserts a hinted blank at the cursor.
+- Prompt templates: Advisor. Notes under the editor as you type: no goal, arrows instead of numbered steps, no output format, no definition of "done", a `/skill` the text uses but Skills does not list (with an "Add to Skills" button), placeholders without hints, and texts that are too short or too long. Short standing rules ("Keep commits small") get no task notes. "Deeper review" asks Claude, with no tools, for up to five more notes.
+- Prompt templates: "Rewrite with project context". Kode reads CLAUDE.md, AGENTS.md, the README and the project manifests, adds the installed skills and your other template titles, and asks Claude to rewrite the text with common prompt-writing practice. The result is a diff that names the files it read; only Apply changes the text and Undo puts the old text back. A rewrite that drops a `/skill` or a placeholder is refused.
+- Composer: Mod+/ opens the Templates pill (rebindable as "Composer: Templates"). The pill opens on a "Find a template" box (Enter turns the first match on or off) and rows show each description. "Save message as template" keeps the message you are writing as a personal template with its `/skills` listed.
+
+### Changed
+
+- Prompt templates page: the editor is the only box on the page, the column stops at 880px, skills show one "✓ all installed" line and badge only problems, and Delete sits apart from the other actions.
+
 ## [0.28.2] - 2026-10-21
 
 ### Added
