@@ -5,6 +5,13 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.29.1] - 2026-10-21
+
+### Fixed
+
+- Instant apps and open files follow the chat. Switching the chat in a tab (next/previous session, or a blank pane taking a session) no longer leaves the old chat's apps open beside the new one. An app shows only beside the chat that owns it; files, diffs and branch views stay for any chat on the same work folder, so a side chat keeps them. Tabs that do not belong are set aside and come back when you return to that chat, also after a restart. Unsaved files and terminals never move.
+- Open on an app card or link now opens the page in the tab that holds its chat, not whichever tab is in front.
+
 ## [0.29.0] - 2026-10-21
 
 ### Added
