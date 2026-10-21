@@ -5,6 +5,24 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.30.0] - 2026-10-21
+
+### Added
+
+- Run panel. The run pill and card grow into a panel with Run, Plan and Lanes tabs. It floats or docks, and `Mod+Shift+L` still toggles it. The Plan tab holds the plan that used to live in the Tasks tab.
+- SDD and TDD graph. Each task shows its test-first steps: a collapsed task has one mark (red then green, closed red, no TDD) and an expanded task lists RED, GREEN and REFACTOR. The steps are read from the task report, the ledger, then the test runs in the transcript, and the TDD gate uses the same reading, so the two cannot disagree.
+- The layer shows only when there is a run. A chat counts when it loaded a spec-driven skill or owns a plan. A chat that only follows test-first counts after it loaded the TDD skill and ran a test. A chat that only runs a test command gets nothing.
+- Next step. The card says what comes next and chips under the last message send it (keys `1` to `3`). A Haiku advisor answers only when no rule matches, only from a fixed list, and its text is never sent.
+- Autopilot. New runs start in Auto-safe: after a stop, a 10 second countdown, then Kode sends the next step to the chat in front. It pauses when you type, switch chat, remove the worktree, after 6 steps in a row or after an errored turn. `Mod+Shift+O` turns it off everywhere. Settings has Off, Suggest and Auto-safe. Test-first-only chats only get suggestions.
+- Fleet. `Mod+Shift+.` or the count in the title bar lists every open run: needs you, failed, running, done, with the verdict rail, a two hour timeline and a note on what happened while you were away. A lane's button sends its next step or opens its decision.
+- Decisions. `Mod+Shift+J` gathers approvals, questions and app asks from every open chat. One key answers (`1` to `4`, `e` for a custom reply, `o` to open the chat).
+- OpenSpec and Spec Kit. A change or feature shows as a run, with tasks counted from `tasks.md`.
+
+### Changed
+
+- The Tasks tab is gone from the sidebar and the right panel. A saved Tasks tab opens the next tab instead.
+- Floating layers use the glass of the "What's new" dialog: 24 px blur, a hairline edge and the dialog shadow. A docked layer, the light theme and reduced transparency stay solid.
+
 ## [0.29.1] - 2026-10-21
 
 ### Fixed
