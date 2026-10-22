@@ -5,6 +5,14 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+## [0.33.1] - 2026-10-22
+
+### Fixed
+
+- **Your phones** no longer says the iPhone app needs a TestFlight invitation or that the beta is invite-only. Kode does not publish a phone app yet; the settings now say so and point to the companion app's source in `mobile/`.
+
 ## [0.33.0] - 2026-10-22
 
 Merges upstream MonoCode 0.16.0.
@@ -258,13 +266,6 @@ _Fixed_
 - Automations started by a new issue or pull request now ask before every action, because anyone who can open one writes its title. To let such runs use the automation's access again, turn on **Trust issue and PR authors** in the automation's Session settings; even then they never get full access. The issue's details reach the agent as reference data it is told not to follow, and these runs never continue a conversation where `/operator` gave app access.
 - Automation prompts are always sent as text, never as `/operator`. In remote projects, an automation prompt that starts with a slash command is refused. Guidance an orchestrator sends to a running worker that begins with `/mono` no longer gives that worker app access.
 
-## [0.26.0] - 2026-10-16
-
-### Changed
-
-- Kode now looks for updates, and downloads the host it installs on a remote machine, at github.com/0x01001011/kode. Versions before 0.26.0 look at the old address and cannot update themselves: install this version once with the script on that page, and updates work again.
-- The star prompt and Help, GitHub open the same page.
-
 ## [0.25.1] - 2026-10-16
 
 ### Added
@@ -304,7 +305,7 @@ _Fixed_
 - A page opens in a tab beside the chat. The first page of a turn opens by itself; turn off **Open pages beside the chat** to open pages from their card or from the link in the agent's reply instead.
 - Choose options on a page and press **Send to chat**: your reply is posted as your next message in that session.
 - Kode bundles the tool that builds pages, so there is nothing to install besides Node 20 or newer. Settings shows the Node it found; without one the agent answers in plain messages. In supervised mode each page asks for one approval.
-- Pages use the KMS look by default: navy, in light and dark. A `kms.json` in `~/.answer-me-with-html/themes/` replaces it on that machine, so your own style stays.
+- Pages use the KMS look by default: navy, in light and dark. A theme file of your own with the same name replaces it on that machine, so your own style stays.
 - Kode now ships its own page tool, built from source in this repository. It never checks for updates and makes no network calls.
 
 ### Changed
