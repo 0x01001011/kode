@@ -5,6 +5,23 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.33.0] - 2026-10-22
+
+Merges upstream MonoCode 0.16.0.
+
+### Added
+
+- Pair a phone from **Settings → Connections → Your phones** to browse projects and conversations, start and continue sessions, follow streamed replies, stop responses, and view code changes. It is off until you turn it on. The companion app's source is in `mobile/`; Kode does not publish a phone app yet.
+- Swipe between projects in the new sidebar.
+- Project and Inbox actions have keyboard-accessible context menus in the new sidebar.
+
+### Fixed
+
+- The new sidebar keeps **Open project** and **Settings** available before a project is selected.
+- The empty conversation view no longer scrolls a few pixels around the message input.
+- The message input's blurred background stays within its rounded corners on Windows.
+- Phone connections on Windows accept both IPv4 and IPv6.
+
 ## [0.32.0] - 2026-10-22
 
 ### Changed
