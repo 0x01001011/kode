@@ -5,6 +5,17 @@ All notable changes to this project are documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.32.0] - 2026-10-22
+
+### Changed
+- The run card is quieter. A gate the run never reached (Review, TDD, PR or CI with no value) has no row, CI has the same row as the other gates (with its glyph), and the Next line shows only when there is a step to take.
+- A working chat that stops writing reads "Working · no output for 7m" instead of "This session went quiet" beside a Working pill.
+
+### Removed
+- From the Plan tab: the status card (the Run tab says the state), the Evidence section (checks and the PR are Run tab rows, changed files are in the Changes sidebar), the All / Left / Problems filter, the sticky "Jump to now" bar, and the other agents and to-do list sections. The Plan tab now shows the plan alone, or "No plan yet".
+- The Outcome summaries setting, which only fed the Evidence section.
+- The card's Open panel button (the frame's Expand button does the same) and its Left line (the pill counts the tasks and each gate has its own row). Open plan shows only when the run has a plan.
+
 ## [0.31.0] - 2026-10-21
 
 ### Added
