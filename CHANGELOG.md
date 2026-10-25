@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.40.1] - 2026-10-25
+
+### Added
+
+- Design notes and an interactive mockup for a planned board view, under `docs/` and `design/`. This release changes no app code.
+
 ## [0.40.0] - 2026-10-25
 
 ### Added
