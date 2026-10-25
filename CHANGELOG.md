@@ -7,6 +7,56 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.36.0] - 2026-10-25
+
+### Changed
+
+- The Superpowers trace pill moved from the chat corner into the title bar as a pin. It is a short chip until you hover or focus it, stays open while autopilot counts down, and opens the trace panel on a click or `⌘⇧L`.
+- The trace panel always sits at the top right of the chat, fits the chat's size, and has a Close button. It can no longer be dragged or docked; drag its left or bottom edge to resize it.
+- A layer state saved by an earlier version (a pill, or a docked panel) now opens as the floating panel at the top right.
+
+### Removed
+
+- The Runs panel (`⌘⇧.`) and the run count in the title bar.
+- The Decisions panel (`⌘⇧J`). Approvals and questions are answered in their chats.
+
+## [0.35.1] - 2026-10-23
+
+### Fixed
+
+- **A chat pane beside another** (an instant app, a file) no longer slides sideways. Focus on a control outside the pane, such as a button of the trace panel, used to push the whole chat to one side and show the empty background where it had been.
+- **The Superpowers trace panel** stays whole inside a narrow pane. A place saved in a wide pane used to leave only a 48 px strip of the panel, clipped at the pane's edge.
+
+## [0.35.0] - 2026-10-23
+
+### Added
+
+- Templates lead the `/` menu. Your prompt templates come first, ahead of Pinned and Recent, open even when the menu is large, and sorted by title. A fresh `/` highlights the first template, so Enter inserts it. Pinned skills keep the digits 1 to 9.
+- A template that comes from a repo shows a Team tag.
+- After a template is inserted, its first `{{placeholder}}` is selected, so the next keystroke fills it.
+
+### Changed
+
+- In a `/` menu at least 480 px wide, the label of an open group sits in a gutter on the line of the group's first row, in the list and in search. That saves a row per group. A folded group and a narrower menu keep a header line of their own.
+- A personal template that shares its title with a team template says "Personal" in its description. The team one shows the Team tag instead of "Team" in its description.
+
+## [0.34.0] - 2026-10-23
+
+### Added
+
+- Superpowers trace. A chat that works in a git worktree and has used a Superpowers skill gets one trace that reads like a git graph: the spec, the plan, every milestone of the spec (done, active, planned or not started), each task with its review and fix rounds, test-first steps, test runs, verification, sub-agents, the pull request and its commits, and decision and plan updates. A row that Kode can only estimate says "est.". The trace is a tree: Up, Down, Home, End, Right, Left and Enter move and open rows, `n` jumps to the current step, and each row tells a screen reader its depth and place.
+- The pill says the run's state in words (Working, Needs you, Failed, Done, or Review found issues) with the current milestone and its progress.
+
+### Changed
+
+- The layer shows only in a chat that works in a git worktree and has used a Superpowers skill. A chat at the project root, or a worktree chat without a Superpowers skill, shows nothing. Autopilot no longer counts down or sends in such a chat, because nothing on screen could show or cancel the countdown.
+- The pill is wider (360 px) so the state word and the milestone fit. The Next line and its autopilot countdown moved to the foot of the trace panel, and the "Open Run Plan" command is now "Open Superpowers trace".
+- A milestone that only a plan file names reads "planned", not "not started", because Kode cannot see the run of a milestone that shipped in another worktree. A milestone seen done in a session stays done (marked "est.") for that session, even after Superpowers deletes the plan's workspace. Pull request commits show only while that workspace exists.
+
+### Removed
+
+- The run card and the Run, Plan and Lanes tabs: the review, tests, TDD, PR and CI verdict rows, the plan picker, the Lanes timeline and the test-first cycles tab. The trace carries the same events in one tree.
+
 ## [0.33.1] - 2026-10-22
 
 ### Fixed
