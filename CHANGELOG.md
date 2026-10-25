@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.39.0] - 2026-10-25
+
+### Added
+
+- The agent now has a rule for asking you things. It asks only what changes its next step, puts one quick two-way question in the question card, puts one-way or linked questions on a page, and never asks the same question in both places. A page holds at most 4 asks, each with a reason for the suggested option. Cheap two-way choices the agent makes itself are listed under "Decided for you".
+- Every ask on a page is tagged easy or hard to undo, and the agent writes option labels that stand alone ("Delete branch X", not "Yes").
+
+### Changed
+
+- A suggested option starts selected only on an ask that is easy to undo. An ask that is hard to undo, or has no tag, starts empty, so one click on Reply cannot approve it.
+- Changing one panel of a page with `patch` is refused when a question sits in another panel; the agent renders the page again as a new round instead. Before, an old answer could still count after another panel changed what the question meant.
+- Answers that mention wipe, purge, truncate, overwrite, destroy, erase or sudo now count as hard to undo.
+- Two panels with the same ID on a page are an error that names both, and a panel ID may go past Z (`P27`).
+
+### Fixed
+
+- Holding Enter on a page's Reply button no longer sends the answer card from the composer before you have seen it.
+
 ## [0.38.2] - 2026-10-25
 
 ### Fixed
