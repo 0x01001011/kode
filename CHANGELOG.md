@@ -7,6 +7,57 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.38.0] - 2026-10-25
+
+### Added
+
+- **A receipt on every finished turn.** The line above a turn's work now says what the turn did instead of "Opus worked for 15m": a failing check, a wait on you, or "Not verified" comes first, then the PR it created, the app it rendered, the checks that passed with their counts, and how many files changed, then the time and model. A turn that only read files keeps the plain line.
+- **Named file chips.** The files a turn wrote or edited sit under that line, newest first, four at most and "+N more". A chip opens the file; a changed code file opens its diff.
+- **What a running turn is doing.** The live line leads with the newest call in plain words ("Running tests", "Reading a.ts", "Waiting on 2 sub-agents") and holds each for a second so it can be read.
+- **Collapsed lines keep names.** "Read a.ts, b.ts +2" replaces "Read 4 files". Four or more plain reads and searches in a row inside an opened group fold into one row that opens in place; a failed call or a screenshot never folds in.
+- `SendMessage` reads as "Message agent", `ListAgents` as "Check agents", and an MCP read says "Read".
+
+### Changed
+
+- **Test results survive a reload.** Loading a chat dropped every tool output over 512 bytes, so 99% of large test runs read "result unknown" after a restart. A chat now keeps the last lines of that output, which hold the runner's summary. On 2,924 real test runs from this machine's history it restores a definite pass or fail for 75% of the ones that were lost (1,488 of 1,977). A piped run whose tail cannot show a failure still reads unknown.
+- A failing check stays failing until the same command or a run of the whole suite passes. Passing `vitest src/b` no longer clears a failure in `vitest src/a`. A failure fixed on the third try reads "passed after 2 failing runs".
+- Tests a sub-agent ran no longer count as proof for the turn. The line says "Tests ran in a sub-agent, result not checked".
+- A sub-agent row shows "running · N steps" while it works and "failed" with its reason when it dies, and an opened row shows what the agent handed back before its trail.
+- A screen reader hears the turn's receipt once when the turn ends and a notice when a sub-agent fails, at most one failure notice per ten seconds. The running clock and verb are no longer read out. The turn's fold button is named by the words on it.
+
+### Fixed
+
+- A sub-agent that was closed without a result no longer shows its last progress line ("Reading foo.ts") as its report.
+- A tool row's test count and the turn's verdict now come from one reader, so they cannot disagree about the same output.
+
+## [0.37.0] - 2026-10-25
+
+### Added
+
+- **Rename a chat's branch.** In a chat that works in a worktree of its own, the branch menu has **Rename branch…**. The `mc/` prefix stays and you type the rest. A branch you pushed keeps its name, because renaming it would close its pull request.
+- **Suggest another name.** The same menu asks the model for a new branch name from the chat so far. It works while Kode chose the name; a name you typed stays.
+- **Branch naming settings.** In Settings, Worktrees, pick the model (Haiku, or Sonnet) and edit the rules the model follows. A Test button shows the name it would give, the model and the time, or why it failed. The chat's first message and the answer format stay fixed, so an edit cannot break the naming.
+
+### Changed
+
+- A generated branch name is one slug: a slash becomes a hyphen, so `mc/fix/login` can no longer be blocked by `mc/fix`.
+- A rename counts a name taken on a remote, or one that differs only in case, as taken, and adds a number.
+- The temporary branch name is labelled "Temporary name", not "Provisional name".
+
+### Fixed
+
+- **A name that held "error", "reset" or "rate"** was thrown away, so the chat kept its temporary name `mc/xxxxxxxx` for good. Those names are kept now.
+- **When no name comes back** (offline, signed out), the chat says so once instead of staying silent.
+- **The naming, title, commit and pull request calls run without tools.** Text pasted into a chat can no longer make them read the worktree's files.
+- **A rename checks the branch first.** If the agent switched branches while the name was being made, nothing is renamed, instead of the wrong branch.
+
+## [0.36.1] - 2026-10-25
+
+### Fixed
+
+- **A chat lists only the pull requests it made.** The PR chip, the sidebar glyph, the chat card, the Changes panel and the list under a tool call used to include a PR the chat only read, or one on a branch that was merely checked out when git ran. One stale branch of the main checkout put the same PR on five chats. A chat now shows a PR it created, or one whose branch it committed or pushed to. A chat that has not pushed since the update shows only the PRs it created, until it commits or pushes again.
+- **A `gh pr create` is found wherever it sits in the command.** A PR body written with a heredoc, a `gh pr list` earlier in the same command, and a command longer than 4,000 characters used to hide the create. A quoted `gh pr create` in a `grep` or an `echo` is no longer counted as one.
+
 ## [0.36.0] - 2026-10-25
 
 ### Changed
