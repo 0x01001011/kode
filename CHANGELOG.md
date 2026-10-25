@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.38.2] - 2026-10-25
+
+### Fixed
+
+- Words you type to a session close its instant app questions in the host, not by a guess from the transcript. A message from an answer card closes only its own blocks, and a CLI or automation turn never closes one. A question stays open while its agent still waits on the page.
+- A message the session refused no longer leaves the agent told that it was released: its tickets open again.
+- A wait whose client has left stops counting as blocked within half a second, so the next answer goes to the session as a message instead of to nobody.
+
 ## [0.38.1] - 2026-10-25
 
 ### Fixed
