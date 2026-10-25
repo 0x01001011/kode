@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.40.0] - 2026-10-25
+
+### Added
+
+- **A shorter agent prompt for pages.** The prompt that teaches the agent to write instant pages is leaner. It puts the diagram first, asks only the decisions that block it, and puts a red-team note inside every option. "Next" chips now start with a named skill, such as a review command, instead of "continue".
+- **Vietnamese pages.** The page language is detected from Vietnamese letters, and Vietnamese words such as "xóa" and "triển khai" mark an answer as a one-way door.
+- `am wait <appId>` opens the ticket and waits in one command.
+- A render now stops with a clear message when a question or option is over 200 characters, or a page holds more than 64 questions. Kode used to cut them without saying so.
+- A render notes a `lang` that is a name ("French") instead of a code, since the name is ignored.
+
+### Changed
+
+- The "Claude says" and "Suggested by Claude" labels are gone from steps and next chips.
+- Small text on pages is 12 px, text-field edges are easier to see, and a reader who asks for reduced motion gets none.
+
+### Fixed
+
+- A draft saved from an older page round no longer reopens a question that a newer round already answered.
+- Table cells wrap whole words instead of cutting them mid-word.
+- A draft over 100 KB or with a line over 10,000 characters is refused with a message, not rendered slowly.
+- A multi-byte character split across two network packets no longer breaks a reply from Kode.
+- A `#` inside a title or value (such as "Issue #12") stays; only ` # ` starts a comment.
+
 ## [0.39.0] - 2026-10-25
 
 ### Added
