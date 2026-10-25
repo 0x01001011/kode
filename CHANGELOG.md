@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.38.1] - 2026-10-25
+
+### Fixed
+
+- An instant app's question no longer stays under "Working" as "Waiting for your answer" after you answer in the session. A question now stays open from the moment the agent asks it until you next send that session a message. Messages that a CLI request or an automation started do not count.
+- Clicking a session that waits on a page question opens the app only while the status surfaces still say it waits.
+
 ## [0.38.0] - 2026-10-25
 
 ### Added
