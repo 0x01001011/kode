@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.41.1] - 2026-10-26
+
+### Fixed
+
+- **Mermaid diagrams are readable in dark and light mode.** A `classDef` or `style` fill such as `fill:#fff` used to leave near-white text on a white box in dark mode. Pale fills now darken on a dark page and keep their hue, and node text and outlines that fail contrast get a legible color.
+- A diagram whose labels hold unquoted parentheses or quotes (`A[Build (fast)]`) is repaired and drawn instead of falling back to its source. A diagram that still fails shows the parser's reason under the source.
+
+### Changed
+
+- Mermaid diagrams use the app's colors and sans font, including workspace themes, and follow a theme change without a reload. Nodes, edges, labels, notes and sequence actors share one palette in place of mermaid's built-in dark and default themes.
+- A wide diagram scrolls sideways instead of shrinking below 65% of its drawn size. **Expand** (top right of a diagram) opens it at full size with zoom in, zoom out, 100% and Fit.
+- Diagrams render one at a time, and a finished drawing is reused, so a theme switch or a remount no longer re-renders every diagram.
+
 ## [0.41.0] - 2026-10-26
 
 ### Added
