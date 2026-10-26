@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.43.0] - 2026-10-26
+
+### Added
+
+- **Prompt Studio.** The Templates page is now Prompt Studio, and a template is a prompt in every menu and label. A prompt shows Prompt, Keep on and Insert tabs, each with a token count. A rail of seven sections (`context`, `task`, `steps`, `verify`, `loop`, `done_when`, `examples`) adds an empty tag block when you pick a missing one, and marks `task` and `done_when` as needed once a prompt uses tags. The Advisor is now Check: it lists what is needed before what is only suggested. `{{variables}}` keep one of six colours per name. Your files, shortcuts and saved settings are unchanged.
+
 ## [0.42.0] - 2026-10-26
 
 ### Added
