@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.41.0] - 2026-10-26
+
+### Added
+
+- **Kode Board (S1), a read-only board for each project.** Open **Board** from the rail or View › Board. It reads a board file (`.kode/board.yaml` on the default branch, or a board stored only on this Mac) and shows Jira issues and GitHub issues and pull requests as cards in lanes, or as a grouped table that fits a narrow pane. Nothing writes to a tracker.
+- Each card shows what the lane does not: the agent session working on it, its pull request's required checks and review ("Checks failing · lint", "Ready to merge"), blocked and overdue facts, or how long it has sat in the lane. A PR that names a Jira key in its branch, title or body appears on that Jira card.
+- **Needs you · N**, **Mine / All**, **Flagged**, and Show filters (Working, Blocked, Overdue, Unassigned, Changed). The table groups by lane, person, epic or release.
+- Four Starters (Solo, Small team, Scrum, OSS maintainer) with real card counts, and an editor for the board file with a message and line number for every mistake.
+- **App: Open Board** can be bound to a key in Settings. It has no default key.
+
+### Changed
+
+- The app keeps one active view instead of five separate open/closed flags. Behaviour is unchanged.
+- `formatElapsed` has an opt-in day unit.
+
 ## [0.40.1] - 2026-10-25
 
 ### Added
