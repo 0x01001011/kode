@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.42.0] - 2026-10-26
+
+### Added
+
+- **Agents can read your board and automations, and propose changes you approve.** A Claude session in a project can run `board read`, `board automations`, `board automation --id` and `board runs --id` (see `board help`). The commands are read-only: they use their own token, work only during an active turn, and cannot reach any write action. Codex and remote sessions are not supported yet.
+- **Review board change** and **Review automation** appear under an agent's reply when it writes a `kode-board` or `kode-automation` block. The Board file editor opens on the proposal with a summary Kode writes itself, the problems, then the full file, and **Show file changes** for a line diff. A board that changed since the proposal, or a proposal for another project, cannot be saved. A board kept only on this Mac applies on **Save** and can be undone from the ⋯ menu (**Undo last change**); a team board offers **Copy as .kode/board.yaml**.
+- A proposed automation opens in the Automations editor, off and in supervised mode. The agent cannot set the run mode, trusted authors, folder or enabled state. An update shows each changed field, with a line diff for the prompt, and is refused if the automation changed after it was proposed. Several proposed automations are reviewed one at a time with **Skip**.
+- Agent-written names in these summaries are quoted and shortened, so a lane or model name cannot pose as one of Kode's own sentences.
+
+### Changed
+
+- The Board file editor's line diff uses the shared source-control diff.
+
 ## [0.41.1] - 2026-10-26
 
 ### Fixed
