@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.44.0] - 2026-10-26
+
+### Changed
+
+- **The Superpowers trace is a card in the chat, not a floating panel.** It sits under the last reply, closed by default as one line (the run's state, a bar with one segment for each task, and the step now). Click it to open a list no taller than 40% of the pane; done tasks and the other milestones fold into one row each. The title-bar pin is gone; `⌘⇧L` opens and closes the card.
+- The card shows only for a worktree chat that runs subagent-driven development, executing-plans or test-driven-development. Brainstorming, planning and review alone no longer show it.
+- A run that needs you or failed says so in the card's header; the card never opens by itself. While autopilot counts down, the countdown and Cancel show in the closed card, and nothing counts down while the card is scrolled out of view.
+
 ## [0.43.0] - 2026-10-26
 
 ### Added
