@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.46.1] - 2026-10-27
+
+### Fixed
+
+- **A Claude sub-agent keeps the name it was spawned with.** While it worked, its progress ("Reading .", "Running Read implementer docs...") replaced its name, and progress for a task Kode had not seen opened extra rows named "Subagent" or after the latest step. The row keeps its name; the current activity goes to the run's detail, and a stray progress line makes no row.
+- **A sub-agent's model reads as a name.** `claude-sonnet-5-5` shows as "Claude Sonnet 5.5" when the model list does not include it.
+
 ## [0.46.0] - 2026-10-27
 
 ### Added
