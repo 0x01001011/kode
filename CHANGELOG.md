@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.50.1] - 2026-10-27
+
+### Fixed
+
+- **The Superpowers card did not show in some Superpowers chats.** A chat that opened with `/superpowers:using-superpowers` (or where the agent loaded it first) had no card; now it shows, starting at "Brainstorm". Chats saved before tool-call facts were kept, and calls whose arguments never arrived, are now recognised from the "Skill /superpowers:…" row itself, so the card and the run card find their skills there too.
+- **A slow or stuck read of the specs folder hid the card for good.** After 3 seconds the card shows with no spec approval, and the real answer fills in if it arrives later.
+- **A spec marked "implemented", "M1 built" or "design, not started" read as a draft** and showed "Spec approved" as the step in progress. Only draft words (draft, proposed, WIP, in review, not yet approved) read as a draft now; other statuses read as unknown.
+- **A spec's `Status:` was missed** when it followed another field on the line (`Date: 2026-10-14. Status: draft`) or was bold.
+- **Plans with lettered tasks showed no tasks.** Headings such as `### Task A:` or `### Task M1:` are read as tasks and numbered by their place in the plan.
+
 ## [0.50.0] - 2026-10-27
 
 ### Added
