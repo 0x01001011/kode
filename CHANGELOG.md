@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.46.0] - 2026-10-27
+
+### Added
+
+- **An instant app's Send goes straight to the chat.** Click Send on the page and the answers land in the chat as your message. They no longer wait in the composer for a second click. An agent waiting on the page gets them live.
+- **The page says what happened to the answers.** "Sent to chat", "Queued in chat" (the session is busy), "Already sent to chat" (same answers as before, with "Send again"), "Not sent" (with "Try again"). A page that a newer round replaced says "A newer round exists" and offers "Open latest". A reopened page whose answers already left says so.
+- **Two holds ask for one more click.** A replaced round waits for "Send this round anyway". A `door=one-way` answer waits for "Confirm and send". Each hold has its own click.
+- **Asks carry a risk rating.** Each option reads `Label | why it is faster. Risk low: what breaks`, with low, med or high. The agent prompt now requires a `door=` tag on every ask and decides options that lead to the same next step itself.
+- An ask-compliance eval (`evals/instant-ask`) scores a prompt on door tags, picks, notes and risk ratings.
+
+### Fixed
+
+- Double-clicking Send no longer lets a second "Already sent" replace "Sent to chat".
+- A stale send can no longer clear the held card of a newer round.
+
 ## [0.45.1] - 2026-10-27
 
 ### Fixed
