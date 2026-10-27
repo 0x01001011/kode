@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.45.1] - 2026-10-27
+
+### Fixed
+
+- **A stopped sub-agent reads as interrupted, not failed.** A run you or the provider stopped shows "interrupted" in grey, the same word the fleet header and the sessions list use. It no longer opens itself, stays pinned under a folded turn, or counts in "Subagent failed". A run that crashed or was denied is unchanged.
+
 ## [0.45.0] - 2026-10-27
 
 ### Added
