@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.45.0] - 2026-10-27
+
+### Added
+
+- **A live turn with four or more sub-agents gets a header and a window.** One line says how many agents there are and how many are running, failed, interrupted and done, with what needs you first. The agents hang under it on the same rail the work fold uses, in a window no taller than 40% of the pane (320px at most). Rows keep their order and size, so nothing moves while you watch. A settled turn is unchanged: it already folds its sub-agents into the work.
+
 ## [0.44.1] - 2026-10-27
 
 ### Fixed
