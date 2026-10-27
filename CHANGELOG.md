@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.44.1] - 2026-10-27
+
+### Fixed
+
+- **The Superpowers card no longer shows a fixed failure as a live one.** A failed test run that a newer run fixed is a muted dash, "failed earlier, passed since", not a red cross. A failure that is the newest run, or still runs, stays red.
+- **"Verify before completion" reads the newest test run after the skill loaded, not the first.** A failure you fixed no longer keeps the row red.
+- A TDD cycle with no failing-test name is titled by its runner and file (`playwright tests/browser/x.spec.ts`), not by the shell line that ran it.
+- The card is set in the interface font inside a chat that uses a monospace font. Its counts use tabular figures, and cut text keeps a tooltip with the full text.
+
 ## [0.44.0] - 2026-10-26
 
 ### Changed
