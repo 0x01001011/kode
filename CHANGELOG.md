@@ -7,6 +7,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.49.0] - 2026-10-27
+
+### Added
+
+- **A question from an app shows in the chat.** When an app asks you something, its page opens under the card in the chat, up to 520 px tall, with Send there. A switch "Show questions in the chat" (Settings, Answer pages) turns it off. While the app's tab is open the chat shows a short note and a link to the tab instead, so only one copy is live.
+- **App state at a glance.** A chip on the tab and the tray says waiting, answering, sent, queued, held, answered in chat, newer round or outdated (after 2 hours), with the age.
+- **A waiting tray above the composer** lists the apps in this session that still need an answer. It hides an app whose tab is open.
+- **The tab closes 1.5 s after Send** once your answers reach the chat. A hold, a failure or a newer round keeps it open, and the card keeps Open.
+- **A newer round waits behind a Review bar** while you answer, so it does not replace your draft.
+- **One app tab per session.** The newest app takes the tab; older apps stay in the tray.
+
+### Fixed
+
+- A page's own draft, posted about 500 ms after Send, no longer cancels the close timer. Only a changed answer does.
+
 ## [0.48.0] - 2026-10-27
 
 ### Added
