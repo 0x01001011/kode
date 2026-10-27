@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.48.0] - 2026-10-27
+
+### Added
+
+- **Check suggests skills for a prompt's Skills list.** When the text names an installed skill (`brainstorming`) or mentions its work ("root cause", "failing test", "pull request"), Check lists the skill with its size in tokens and an Add button. A new note warns when the Skills list adds more than 20,000 tokens to every chat, and another when a prompt with sections has no real `<context>`.
+- **Deeper review sees your skills and project.** It now gets the prompt-writing practices, your installed skills (names and descriptions, never bodies) and the project's CLAUDE.md, README and manifests, and sorts its notes into Bundle, practice, context and review. A skill it suggests is dropped unless it is installed. The result names the files it read.
+
+## [0.47.0] - 2026-10-27
+
+### Added
+
+- **A code index for every project and worktree.** Turn it on once (Settings, MCP, or the question Kode asks at first launch) and Kode downloads CodeGraph, indexes your projects in the background, and registers CodeGraph as an MCP server for Claude Code and Codex. A new worktree near an indexed tree clones the index and syncs the few changed files (up to 40) instead of re-indexing. A new session never waits for the index; one line above the composer says while it builds.
+- **Review changes.** A button above the composer runs Open Code Review in delegate mode on the session's working tree and sends its file list and review rules to the session's own agent as a prompt. No API key, no second model bill.
+- **Downloads are pinned.** CodeGraph 1.6.2 and Open Code Review 1.13.3 are fetched only from GitHub release URLs, checked against a sha256 that ships in the app, unpacked entry by entry (no absolute names, `..`, links that leave the folder, or devices), and run by absolute path. Telemetry and self-update are off.
+- **Switches.** A machine switch per tool, a per-project override, and a repo can switch a tool off with `"tools": { "codegraph": false }` in `.kode/worktree.json` (a repo can only turn a tool off). Settings, MCP has Remove tools; it removes only the MCP entries Kode added and leaves your own `codegraph` entry alone.
+
+### Notes
+
+- This release covers this computer on macOS and Linux. Remote hosts over SSH get tools in a later release.
+- A first index of a large repo takes minutes and about 270 MB; a computer under heavy load takes longer. A folder that is not a git checkout downloads nothing.
+
 ## [0.46.1] - 2026-10-27
 
 ### Fixed
