@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.50.0] - 2026-10-27
+
+### Added
+
+- **An advisor card under the last reply of a Superpowers chat.** It lists nine stages (brainstorm, spec written, spec approved, plan, worktree, build, TDD, verify, review and finish). Each reads done, now, missing or unknown, with its evidence, and the header says how many are done and what is left, or that the rest is unknown.
+- **Next steps that name the skill.** Up to three options, each with the Superpowers skill and a ready prompt, such as `Use superpowers:writing-plans on docs/superpowers/specs/…`. Click one, or press 1 to 3 inside the card, and the prompt goes into the composer after anything you typed. A prompt already at the end of your draft is not added twice. Nothing is sent until you press Enter.
+- **Suggestions before a run exists.** A brainstorm, spec or plan stop used to read "No suggestion"; now it suggests the next skill. The card reads your last message, in English or Vietnamese ("xong chưa?", "add edge cases", "open PRs"), and puts the matching step higher. Agent text never goes into a prompt.
+- **A pack interface for other skill frameworks.** A pack holds a framework's stages, checklist and prompts, and owns its skill namespace and its spec and plan folders. Only the Superpowers pack ships.
+
+### Changed
+
+- **The next-step chips under the last reply are replaced by the card.** The Next line on the run card and autopilot work as before.
+- A spec's `Status:` line (approved, draft) is read into the spec index.
+
 ## [0.49.0] - 2026-10-27
 
 ### Added
