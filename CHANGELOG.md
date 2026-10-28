@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.52.0] - 2026-10-28
+
+### Added
+
+- **Remote hosts get the code index and review tools too.** A connected SSH host now downloads the same pinned CodeGraph and Open Code Review (each file checked against a hash that ships in the app), registers CodeGraph for Claude Code and Codex on that host, and builds a code index for each new worktree in the background, as this computer does. Kode asks once per host, the first time you open a project on it. Settings, MCP lists each host with Turn on, Turn off and Remove tools. The first prompt never waits for an index, and the index shows in the session's checklist.
+- **An older host asks for an update.** A host without the new `tools.provision` capability shows the usual "update the host" notice. A host whose tool pins differ from the app's skips tools instead.
+
+### Changed
+
+- **A running fleet of sub-agents shows as one line.** With four or more delegated runs, the chat shows `26 agents · 2 running · 2 failed · 22 done` and a still pixel sprite for each model, instead of every row. The failed count stays red. Click the line to open the rows; folding it again keeps the rows you had opened. A sprite hops only while its model has a run going, and not at all with reduced motion.
+- **Hover or focus a sprite to see its model's counts and agents.** The card lists up to 8 agents with their status, as plain text. Screen readers hear it when the sprite has focus.
+
 ## [0.51.1] - 2026-10-28
 
 ### Fixed
