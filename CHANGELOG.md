@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.52.1] - 2026-10-28
+
+### Fixed
+
+- **A spec written in phases is labelled by its phase.** The run trace now reads `Phase 2 of 4` or `Part A of 3` for a milestone taken from a `Phase N` or `Part A` heading, where it read `M2 of 4`. Milestones from a table keep `M2 of 4`.
+
 ## [0.52.0] - 2026-10-28
 
 ### Added
