@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.51.0] - 2026-10-28
+
+### Added
+
+- **A bar chart block for instant apps.** A ```chart bar block draws horizontal bars with the value written on each row, an optional note, and a starred row that the others dim behind. A data table under the chart opens for readers who want the numbers. A `%` unit scales the bars to 100; any other unit scales them to the largest value. At most 12 rows. A `%` value above 100 is refused, because a bar cannot show it.
+
+### Fixed
+
+- **An app's Send button no longer says "Sent ✓" for answers that did not go to the chat.** Kode now tells the page whether the answers went on. A held, queued or refused answer takes the label back at once, and the tab's status line says why.
+
 ## [0.50.1] - 2026-10-27
 
 ### Fixed
