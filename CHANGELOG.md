@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.51.1] - 2026-10-28
+
+### Fixed
+
+- **A spec written in phases shows its phases.** A spec with no Milestones table now takes its `Phase 0`, `Phase 1` or `Part A`, `Part B` headings as its milestones, so the run card and the trace list them and say where each stands. A plan whose `Spec:` line names one phase links to it. A plan that names several ("phases 3 and 4") still links to none.
+
 ## [0.51.0] - 2026-10-28
 
 ### Added
